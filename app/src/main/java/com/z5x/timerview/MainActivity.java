@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         view = findViewById(R.id.timer);
 
-        view.start(System.currentTimeMillis() + 18 * 1000);
+        view.start(18 * 1000);
 
         view.setCountDownListener(new TimerTextView.CountDownListener() {
             @Override

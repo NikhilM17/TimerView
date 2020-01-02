@@ -210,7 +210,7 @@ public class TimerTextView extends AppCompatTextView {
     }
 
     public void start(long endTime) {
-        this.endTime = endTime;
+        this.endTime = System.currentTimeMillis() + endTime;
         createTimer();
 
         if (endTime - System.currentTimeMillis() < 24 * 60 * 60 * 1000) {
