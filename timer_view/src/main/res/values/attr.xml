@@ -4,23 +4,19 @@
         <attr name="expiry_message" format="string" />
 
         <attr name="time_pattern">
-            <flag name="day_hr_min_sec" value="0" />
-            <flag name="hr_min_sec" value="1" />
-            <flag name="hr_min" value="2" />
-            <flag name="min_sec" value="3" />
+            <flag name="D_HH_MM_SS" value="0" />
+            <flag name="d_hh_mm_ss" value="1" />
+            <flag name="HH_MM_SS" value="2" />
         </attr>
 
         <attr name="days_pattern">
             <flag name="days_time" value="0" />
-            <flag name="days" value="1" />
+            <flag name="only_days" value="1" />
         </attr>
 
-        <!--<attr name="time_pattern">
-            <flag name="@string/day_hr_min_sec" value="0" />
-            <flag name="@string/hr_min_sec" value="1" />
-            <flag name="@string/hr_min" value="2" />
-            <flag name="@string/min_sec" value="3" />
-        </attr>-->
+        <attr name="backgroundEnable" format="boolean" />
+
+        <attr name="cutOffSeconds" format="integer" />
 
     </declare-styleable>
 </resources>
