@@ -1,2 +1,1 @@
-include ':app', ':timer_view'
-rootProject.name='TimerView'
+include ':app'

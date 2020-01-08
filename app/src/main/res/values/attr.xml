@@ -18,6 +18,7 @@
 
         <attr name="countDownTextColor" format="color" />
         <attr name="expiryMesgTextColor" format="color" />
+        <attr name="hideWhenExpired" format="boolean" />
 
     </declare-styleable>
 </resources>

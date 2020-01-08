@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TimerView</string>
+    <string name="day_hr_min_sec">D, HH:MM:SS</string>
+    <string name="hr_min_sec">HH:MM:SS</string>
+    <string name="min_sec">MM:SS</string>
+    <string name="hr_min">HH:MM</string>
 </resources>

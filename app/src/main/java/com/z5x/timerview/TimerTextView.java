@@ -1,10 +1,11 @@
-package com.z5x.timer_view;
+package com.z5x.timerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.os.CountDownTimer;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
@@ -17,10 +18,11 @@ public class TimerTextView extends AppCompatTextView {
     private long endTime;
     private String expiryMessage;
     private boolean isTimerExpired = false, showTimeLeft;
-    private CountDownTimer timer;
+    private Timer timer;
     private CountDownListener countDownListener;
     private int countDownTextColor;
     private int expiryMesgTextColor;
+    private boolean hideWhenExpired = false;
 
     public TimerTextView(Context context) {
         this(context, null);
@@ -38,9 +40,10 @@ public class TimerTextView extends AppCompatTextView {
             expiryMessage = a.getString(R.styleable.TimerTextView_expiry_message);
             timePattern = a.getInt(R.styleable.TimerTextView_time_pattern, 0);
             daysPattern = a.getInt(R.styleable.TimerTextView_days_pattern, 0);
-            countDownSeconds = a.getInt(R.styleable.TimerTextView_countDownSeconds, 0);
+            countDownSeconds = a.getInt(R.styleable.TimerTextView_countDownSeconds, -1);
             countDownTextColor = a.getColor(R.styleable.TimerTextView_countDownTextColor, Color.BLACK);
             expiryMesgTextColor = a.getColor(R.styleable.TimerTextView_expiryMesgTextColor, Color.BLACK);
+            hideWhenExpired = a.getBoolean(R.styleable.TimerTextView_hideWhenExpired, false);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -50,9 +53,10 @@ public class TimerTextView extends AppCompatTextView {
 
     private void createTimer() {
         if (endTime > 0) {
-            timer = new CountDownTimer(endTime, 1000) {
+            timer = new Timer(endTime, 1000) {
                 @Override
                 public void onTick(long l) {
+                    Log.w("Time", l + "");
                     setTime(l);
                     setTimerExpired(false);
                 }
@@ -122,14 +126,16 @@ public class TimerTextView extends AppCompatTextView {
     }
 
     private void onExpired() {
-        setText(expiryMessage != null ? expiryMessage : "00");
+        hideWhenExpired = !TextUtils.isEmpty(expiryMessage);
+        if (hideWhenExpired)
+            setText(expiryMessage);
         setCompoundDrawablePadding(16);
         isTimerExpired = true;
         setTextColor(expiryMesgTextColor == 0 ? Color.BLACK : expiryMesgTextColor);
     }
 
-    public void start(long endTime) {
-        this.endTime = endTime;
+    public void start(long seconds) {
+        this.endTime = seconds * 1000;
         createTimer();
         timer.start();
     }
