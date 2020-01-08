@@ -9,14 +9,14 @@
 
     <com.z5x.timer_view.TimerTextView
         android:id="@+id/timer"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         android:gravity="center"
         android:textColor="#000"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:backgroundEnable="true"
-        app:cutOffSeconds="15"
+        app:countDownSeconds="15"
+        app:countDownTextColor="@color/colorAccent"
         app:days_pattern="days_time"
         app:expiry_message="Time Expired"
         app:time_pattern="HH_MM_SS"

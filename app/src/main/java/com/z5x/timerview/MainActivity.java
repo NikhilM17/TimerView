@@ -20,16 +20,5 @@ public class MainActivity extends AppCompatActivity {
 
         view.start(18 * 1000);
 
-        view.setCountDownListener(new TimerTextView.CountDownListener() {
-            @Override
-            public void onTick(long seconds) {
-                view.setText(String.valueOf(seconds));
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        });
     }
 }

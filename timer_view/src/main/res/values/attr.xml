@@ -14,9 +14,10 @@
             <flag name="only_days" value="1" />
         </attr>
 
-        <attr name="backgroundEnable" format="boolean" />
+        <attr name="countDownSeconds" format="integer" />
 
-        <attr name="cutOffSeconds" format="integer" />
+        <attr name="countDownTextColor" format="color" />
+        <attr name="expiryMesgTextColor" format="color" />
 
     </declare-styleable>
 </resources>
