@@ -38,7 +38,7 @@ public class TimerTextView extends AppCompatTextView {
             expiryMessage = a.getString(R.styleable.TimerTextView_expiry_message);
             timePattern = a.getInt(R.styleable.TimerTextView_time_pattern, 0);
             daysPattern = a.getInt(R.styleable.TimerTextView_days_pattern, 0);
-            countDownSeconds = a.getInt(R.styleable.TimerTextView_countDownSeconds, 10);
+            countDownSeconds = a.getInt(R.styleable.TimerTextView_countDownSeconds, 0);
             countDownTextColor = a.getColor(R.styleable.TimerTextView_countDownTextColor, Color.BLACK);
             expiryMesgTextColor = a.getColor(R.styleable.TimerTextView_expiryMesgTextColor, Color.BLACK);
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public class TimerTextView extends AppCompatTextView {
     }
 
     private void onExpired() {
-        setText(expiryMessage);
+        setText(expiryMessage != null ? expiryMessage : "00");
         setCompoundDrawablePadding(16);
         isTimerExpired = true;
         setTextColor(expiryMesgTextColor == 0 ? Color.BLACK : expiryMesgTextColor);

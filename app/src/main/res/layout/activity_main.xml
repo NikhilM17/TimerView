@@ -15,11 +15,7 @@
         android:textColor="#000"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:countDownSeconds="15"
         app:countDownTextColor="@color/colorAccent"
-        app:days_pattern="days_time"
-        app:expiry_message="Time Expired"
-        app:time_pattern="HH_MM_SS"
         tools:text="29 Days, 23:34:21" />
 
 </LinearLayout>
