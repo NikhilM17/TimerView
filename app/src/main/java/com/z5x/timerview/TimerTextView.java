@@ -17,7 +17,7 @@ public class TimerTextView extends AppCompatTextView {
     private int timePattern = 0, daysPattern = 0, countDownSeconds = 10;
     private long endTime;
     private String expiryMessage;
-    private boolean isTimerExpired = false, showTimeLeft;
+    private boolean isTimerExpired = false;
     private Timer timer;
     private CountDownListener countDownListener;
     private int countDownTextColor;
