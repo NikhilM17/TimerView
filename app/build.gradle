@@ -2,7 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'maven'
 
 group = 'com.github.jitpack'
-version = '1.0.35'
+version = '1.0.36'
+
+repositories {
+    mavenCentral()
+    maven{url 'https://jitpack.io'}
+}
 
 android {
     compileSdkVersion 29
@@ -18,7 +23,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0.35"
+        versionName "1.0.36"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -45,7 +50,7 @@ task writeNewPom {
         project {
             groupId 'com.github.NikhilM17'
             artifactId 'TimerView'
-            version '1.0.35'
+            version '1.0.36'
 
             licenses {
                 license {
