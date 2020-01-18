@@ -1,4 +1,4 @@
-package com.z5x.timerview;
+package com.example.timer_view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

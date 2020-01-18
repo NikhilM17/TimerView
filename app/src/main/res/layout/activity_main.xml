@@ -7,7 +7,7 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.z5x.timerview.TimerTextView
+    <com.example.timer_view.TimerTextView
         android:id="@+id/tvTimer"
         android:textSize="22sp"
         app:time_pattern="HH_MM_SS"
